@@ -1,285 +1,332 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/user/repository/main/assets/brand_logo.png" alt="Twiin Logo" width="120" onerror="this.src='https://img.icons8.com/fluency/144/credit-card-front.png'"/>
+  <img src="https://raw.githubusercontent.com/sanjay434343/twiin/main/assets/brand_logo.png" alt="Twiin app logo – offline digital card wallet for ID, Aadhaar, ATM and smart cards" width="120"/>
 
-  # Twiin
-  ### The Hardware-Secured, Real-Physics Digital Card Wallet
+  # Twiin – Offline Digital Card Wallet for ID, Aadhaar, ATM & Smart Cards
+
+  ### Scan any card. Get a perfect digital twin. 100% offline, encrypted, and yours.
 
   [![Flutter](https://img.shields.io/badge/Flutter-3.24%2B-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
   [![Dart](https://img.shields.io/badge/Dart-3.5%2B-0175C2?logo=dart&logoColor=white)](https://dart.dev)
-  [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?logo=android&logoColor=white)](https://android.com)
-  [![Security](https://img.shields.io/badge/Security-256--bit%20AES%20%2B%20Offline%20Vault-darkgreen?logo=shield)](https://github.com)
-  [![ISO Standard](https://img.shields.io/badge/Standard-ISO%2FIEC%207810%20ID--1-blue)](https://www.iso.org/standard/70483.html)
-  [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+  [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?logo=android&logoColor=white)](https://github.com/sanjay434343/twiin/releases)
+  [![Encryption](https://img.shields.io/badge/Encryption-AES--256-darkgreen?logo=letsencrypt&logoColor=white)](#-security--privacy)
+  [![Offline](https://img.shields.io/badge/Works-100%25%20Offline-orange)](#-why-twiin)
+  [![ISO 7810 ID-1](https://img.shields.io/badge/Standard-ISO%2FIEC%207810%20ID--1-blue)](https://www.iso.org/standard/70483.html)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
   [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-  <p align="center">
-    <b>Transform physical cards into hyper-realistic, 3D interactive, mathematically enhanced digital twins.</b><br/>
-    <i>100% Offline • Hardware Sandboxed • Zero Telemetry • Instant 100% Screen Brightness</i>
-  </p>
-
-  <p align="center">
-    <a href="#-why-twiin">Why Twiin</a> •
-    <a href="#-scientific-digitalization-pipeline">Scientific Formulas</a> •
+  <p>
+    <a href="https://github.com/sanjay434343/twiin/releases"><b>⬇️ Download the APK</b></a> •
     <a href="#-key-features">Features</a> •
-    <a href="#-security-architecture">Security Vault</a> •
-    <a href="#-getting-started">Installation</a> •
-    <a href="#-apk-size-optimization">Ultra-Compressed Build</a>
+    <a href="#-how-twiin-digitizes-your-cards">How It Works</a> •
+    <a href="#-security--privacy">Security</a> •
+    <a href="#-faq">FAQ</a> •
+    <a href="#-getting-started-build-from-source">Build From Source</a>
   </p>
 
 </div>
+
+---
+
+**Twiin** is a free, open-source **digital card wallet** built with **Flutter** for Android and iOS. It turns your physical **ID cards, Aadhaar cards, ATM/debit cards, driver's licenses, loyalty cards, business cards, and smart cards** into clean, realistic, 3D-interactive **digital duplicates**, stored **offline** on your phone with **AES-256 encryption**. No account. No cloud. No tracking.
+
+> **Why "Twiin"?** Two i's, on purpose: every card you scan gets an exact **twin**.
 
 ---
 
 ## 💡 Why Twiin?
 
-| The Problem with Physical & Digital Wallets | The Twiin Solution |
+| The problem | The Twiin solution |
 |:---|:---|
-| ❌ **Bulky Wallets**: Losing physical cards, worn-out plastic, peeling magnetic stripes. | ✅ **Ultra-Lightweight Digital Twins**: Every ID, debit, license, loyalty, and business card in your pocket. |
-| ❌ **Blurry Photo Gallery Scans**: Dark, crooked photos with harsh flash hotspots and bad angles. | ✅ **Multi-Pass Computer Vision**: Restores degraded plastic, strips ambient glare, and normalizes geometry. |
-| ❌ **Cloud Surveillance**: Big tech wallet apps upload card numbers, dates, and spending habits to remote servers. | ✅ **Zero-Knowledge Kernel Sandbox**: 100% offline local storage with 256-bit AES cryptographic encryption. |
-| ❌ **Barcode/POS Scanning Failures**: Dim screens cause cashier scanners and optical terminals to fail. | ✅ **Auto-100% HDR Brightness**: Instantly overrides display to 100% luminance when viewing card details. |
-| ❌ **Lifeless Flat Images**: Conventional wallet apps show static 2D rectangles. | ✅ **Physical 3D Gyroscope Engine**: True card depth, specular holographic shine, and real physical flips. |
+| ❌ **Bulky wallets** and worn-out, easily lost plastic cards | ✅ **Every card in your pocket**: ID, Aadhaar, ATM, license, loyalty, business and smart cards |
+| ❌ **Blurry gallery photos** with glare, shadows and crooked angles | ✅ **Computer-vision cleanup** that removes glare, fixes lighting and straightens geometry |
+| ❌ **Cloud wallet apps** that upload your card data to remote servers | ✅ **100% offline, on-device storage** with AES-256 encryption and no cloud sync |
+| ❌ **Barcodes that won't scan** on a dim phone screen | ✅ **Auto max-brightness** on the card detail screen, restored when you leave |
+| ❌ **Flat, lifeless 2D images** | ✅ **Real 3D card physics**: tilt, specular shine and a true double-sided flip |
 
 ---
 
-## 🔬 Scientific Digitalization Pipeline & Mathematical Formulas
+## ✨ Key Features
 
-Unlike ordinary card scanner apps that simply take a JPEG photo, **Twiin** executes a multi-pass, deterministic computer vision pipeline inside a dedicated Dart background Isolate. It mathematically extracts the intrinsic material properties of the card while stripping environmental noise.
+- 📷 **Smart card scanner**: capture any card and get a clean, print-quality digital copy
+- 🪪 **Supports all card types**: Aadhaar and ID cards, ATM/debit/credit cards, driving licenses, smart cards, loyalty and business cards
+- 🧠 **Multi-pass computer-vision pipeline**: auto-orientation, glare removal, contrast and saturation restoration, denoising and sharpening
+- 📐 **ISO/IEC 7810 ID-1 accurate**: exact real-world card proportions and rounded corners
+- 🎴 **3D interactive cards**: motion-sensor tilt, holographic-style shine, double-sided flip
+- 🔆 **Scanner-friendly display**: automatic 100% brightness for barcodes and QR codes
+- 🖨️ **Print & export**: arrange card position and size in the built-in editor and export to **PDF**
+- 🔒 **Security locks**: biometrics (fingerprint / Face ID) with in-app PIN fallback
+- 🚫 **Private by design**: no ads, no analytics, no accounts, no cloud
+
+---
+
+## 📸 Screenshots
+
+<!-- Add real screenshots to /assets/screenshots and uncomment: -->
+<!--
+<p align="center">
+  <img src="assets/screenshots/home.png" alt="Twiin home screen showing a wallet of digital cards" width="200"/>
+  <img src="assets/screenshots/scan.png" alt="Twiin card scanner detecting and cleaning an ID card" width="200"/>
+  <img src="assets/screenshots/card-3d.png" alt="Twiin 3D card detail with tilt and shine" width="200"/>
+  <img src="assets/screenshots/export-pdf.png" alt="Twiin editor exporting cards to PDF" width="200"/>
+</p>
+-->
+
+---
+
+## 🔬 How Twiin Digitizes Your Cards
+
+Most card-scanner apps just save a JPEG. Twiin runs a **deterministic, multi-pass computer-vision pipeline** inside a background Dart Isolate (so the UI stays smooth) to recover what your card *really* looks like, and strip away glare, shadows and noise.
 
 ```
-Raw Camera Input (YCbCr) 
-         │
-         ▼
-[ 1. Auto-Orientation & ISO 7810 Geometry Normalization ]
-         │
-         ▼
-[ 2. Retinex Illumination-Reflectance Decomposition ] 
-         │
-         ▼
-[ 3. CLAHE Local Contrast & Plastic Saturation Boost ]
-         │
-         ▼
-[ 4. Bilateral Edge-Preserving Spatial Denoising ]
-         │
-         ▼
-[ 5. Adaptive Shock & High-Boost Laplacian Sharpening ]
-         │
-         ▼
-[ 6. Vector Chamfer Bevel & Subpixel Anti-Aliased Mask ]
-         │
-         ▼
-Lossless SVG Container + GPU-Accelerated HD Artifact
+Camera image
+     │
+     ▼
+1. Auto-orientation + ISO 7810 geometry normalization
+     ▼
+2. Retinex illumination–reflectance decomposition (glare & shadow removal)
+     ▼
+3. CLAHE-style contrast + plastic saturation restoration
+     ▼
+4. Bilateral edge-preserving denoising
+     ▼
+5. Adaptive high-boost sharpening
+     ▼
+6. Anti-aliased rounded-corner mask + specular bevel
+     ▼
+Clean digital twin (SVG container + HD raster artifact)
 ```
 
----
+<details>
+<summary><b>📐 Show the math behind each step</b></summary>
 
-### 1. ISO/IEC 7810 ID-1 Planar Geometry Normalization
-All standard debit, credit, driver's licenses, and identity cards conform strictly to the international ISO/IEC 7810 ID-1 standard. Twiin enforces exact physical aspect ratio constraints:
+### 1. ISO/IEC 7810 ID-1 geometry normalization
 
-$$\text{Aspect Ratio}_{\text{ISO}} = \frac{85.60\text{ mm}}{53.98\text{ mm}} \approx 1.5857725$$
+Standard ID, debit and credit cards follow the ID-1 format:
 
-$$\text{Corner Radius } r_{\text{corner}} = 3.18\text{ mm} \quad (\approx 3.75\% \text{ of card width})$$
+$$\text{Aspect Ratio} = \frac{85.60\ \text{mm}}{53.98\ \text{mm}} \approx 1.5858$$
 
-If portrait orientation is detected ($\text{Height} > \text{Width}$), an orthographic coordinate transpose rotates the pixel buffer in $\mathcal{O}(N)$ time:
+$$r_{\text{corner}} = 3.18\ \text{mm} \quad (\approx 3.7\%\ \text{of card width})$$
 
-$$x_{\text{new}} = \text{Height} - 1 - y_{\text{old}}, \quad y_{\text{new}} = x_{\text{old}}$$
+If a portrait image is detected (height > width), the pixel buffer is rotated in $\mathcal{O}(N)$:
 
----
+$$x_{\text{new}} = \text{Height} - 1 - y_{\text{old}}, \qquad y_{\text{new}} = x_{\text{old}}$$
 
-### 2. Retinex Illumination-Reflectance Decomposition
-Photographs taken under indoor warm lighting, flash glare, or hand shadows suffer from uneven ambient radiance. Twiin models observed pixel intensity $S(x, y)$ as the product of intrinsic material reflectance $R(x, y)$ and environmental illuminance $L(x, y)$:
+### 2. Retinex illumination–reflectance decomposition
+
+Observed intensity is modeled as surface reflectance times ambient light:
 
 $$S(x, y) = R(x, y) \cdot L(x, y)$$
 
-To recover the true, clean card surface $R(x, y)$, Twiin subdivides the card plane into a $16 \times 10$ sampling grid and calculates the 82nd percentile luminance ($P_{82}$) of local background plastic:
+The card is divided into a $16 \times 10$ grid; the 82nd-percentile luminance of each cell estimates the local lighting, using
 
-$$\text{Lum}(x, y) = 0.299 \cdot R + 0.587 \cdot G + 0.114 \cdot B$$
+$$\text{Lum} = 0.299\,R + 0.587\,G + 0.114\,B$$
 
-Continuous field luminance $L_{\text{local}}(x, y)$ is computed across the matrix using bilinear interpolation:
+Lighting is interpolated bilinearly between grid points (coordinates normalized to grid-cell units):
 
-$$L_{\text{local}}(x, y) = \sum_{i=0}^{1}\sum_{j=0}^{1} L(x_i, y_j) \cdot (1 - |x - x_i|) \cdot (1 - |y - y_j|)$$
+$$L_{\text{local}}(x, y) = \sum_{i=0}^{1}\sum_{j=0}^{1} L(x_i, y_j)\,(1 - |x - x_i|)\,(1 - |y - y_j|)$$
 
-The Retinex normalization scalar $\Phi(x, y)$ strips shadows and flash hotspots:
+A correction scalar then flattens shadows and flash hotspots:
 
-$$\Phi(x, y) = \text{clamp}\left( \frac{L_{\text{target}}}{L_{\text{local}}(x, y)}, 0.80, 1.35 \right), \quad \text{where } L_{\text{target}} = 242.0$$
+$$\Phi(x, y) = \text{clamp}\!\left(\frac{L_{\text{target}}}{L_{\text{local}}(x, y)},\ 0.80,\ 1.35\right), \quad L_{\text{target}} = 242$$
 
-$$R_{\text{norm}}(x, y) = \text{clamp}\left( S(x, y) \cdot \Phi(x, y), 0, 255 \right)$$
+$$R_{\text{norm}}(x, y) = \text{clamp}\big(S(x, y)\cdot\Phi(x, y),\ 0,\ 255\big)$$
 
----
+### 3. Saturation restoration and tonal stretch
 
-### 3. PVC Saturation Restoration & CLAHE Dynamic Range Stretch
-Scanners and digital cameras often desaturate printed plastic finishes. Twiin applies a chromatic saturation vector transformation around the local achromatic axis:
+$$C_{\text{out}} = \text{Lum} + s\,(C_{\text{in}} - \text{Lum}), \quad s = 1.15$$
 
-$$C_{\text{out}} = \text{Lum} + s \cdot (C_{\text{in}} - \text{Lum}), \quad \text{with } s = 1.15$$
+$$C_{\text{final}} = \begin{cases} \lfloor 0.90\,C_{\text{out}} \rfloor & \text{if } \text{Lum} < 115 \quad \text{(darker, crisper text)} \\ \lfloor (C_{\text{out}} - 210)\cdot 1.08 + 210 \rfloor & \text{if } \text{Lum} > 210 \quad \text{(cleaner highlights)} \end{cases}$$
 
-To make stamped cardholder numbers and micro-text razor sharp, Twiin stretches the dynamic tonal range:
+### 4. Bilateral edge-preserving denoising
 
-$$\text{Text Darkening: } \quad C_{\text{final}} = \lfloor 0.90 \cdot C_{\text{out}} \rfloor \quad \text{if } \text{Lum} < 115$$
+$$I_{\text{denoised}}(p) = \frac{1}{W_p}\sum_{q \in \Omega} I(q)\, f(\lVert p - q \rVert)\, g(|I(p) - I(q)|)$$
 
-$$\text{Highlight Cleaning: } \quad C_{\text{final}} = \lfloor (C_{\text{out}} - 210) \cdot 1.08 + 210 \rfloor \quad \text{if } \text{Lum} > 210$$
+$$g(\Delta I) = \exp\!\left(-\frac{(\Delta I)^2}{2\sigma_r^2}\right), \quad \sigma_r = 24$$
 
----
+Range weights are precomputed in a lookup table for $\mathcal{O}(1)$ access. A gradient guard protects text, barcodes and logos:
 
-### 4. Bilateral Edge-Preserving Denoising
-Gaussian blur removes camera sensor noise but damages crisp text edges. Twiin uses an edge-preserving bilateral filter that combines spatial geometric proximity with radiometric photometric difference:
+$$\nabla I = |\text{Lum}(x{+}1, y) - \text{Lum}(x, y)| + |\text{Lum}(x, y{+}1) - \text{Lum}(x, y)|$$
 
-$$I_{\text{denoised}}(p) = \frac{1}{W_p} \sum_{q \in \Omega} I(q) \cdot f(\|p - q\|) \cdot g(|I(p) - I(q)|)$$
+$$\text{if } \nabla I > 28:\quad I_{\text{denoised}}(p) = I(p)$$
 
-Where photometric range weights are pre-computed in an $\mathcal{O}(1)$ lookup table:
+### 5. Adaptive high-boost sharpening
 
-$$g(\Delta I) = \exp\left( -\frac{(\Delta I)^2}{2\sigma_r^2} \right), \quad \sigma_r = 24.0$$
+$$I_{\text{sharp}} = I + \gamma(\nabla I)\,\big[I - I_{\text{box}}\big], \qquad \gamma = \begin{cases} 0.50 & \nabla I > 18 \ \text{(text, numbers)} \\ 0.15 & \nabla I \le 18 \ \text{(smooth plastic)} \end{cases}$$
 
-A gradient magnitude threshold protects all embossed letters, barcodes, and logos from blurring:
+### 6. Anti-aliased corner mask and specular bevel
 
-$$\nabla I = |\text{Lum}(x+1, y) - \text{Lum}(x, y)| + |\text{Lum}(x, y+1) - \text{Lum}(x, y)|$$
-
-$$\text{If } \nabla I > 28, \quad I_{\text{denoised}}(p) = I(p) \quad \text{(100\% Stroke Preservation)}$$
-
----
-
-### 5. Adaptive Shock & High-Boost Laplacian Sharpening
-To restore physical ink boundaries, Twiin computes an adaptive high-boost difference filter:
-
-$$I_{\text{sharp}}(x, y) = I(x, y) + \gamma(\nabla I) \cdot \left[ I(x, y) - I_{\text{box}}(x, y) \right]$$
-
-Where the sharpening gain $\gamma$ dynamically scales:
-
-$$\gamma(\nabla I) = \begin{cases} 0.50 & \text{if } \nabla I > 18 \quad \text{(Text strokes, CVV, numbers)} \\ 0.15 & \text{if } \nabla I \le 18 \quad \text{(Smooth plastic backgrounds)} \end{cases}$$
-
----
-
-### 6. Subpixel Anti-Aliased Corner Masking & Chamfer Bevel
-To eliminate aliasing (jagged edges) around the rounded corners, each pixel's distance from the four corner circle origins is computed:
+With $d(x, y)$ as the signed distance from the corner arc (negative inside the card):
 
 $$d(x, y) = \sqrt{(x - x_0)^2 + (y - y_0)^2} - r_{\text{corner}}$$
 
-$$\alpha(x, y) = \text{clamp}\left(1.0 - d(x, y), 0.0, 1.0\right)$$
+$$\alpha(x, y) = \text{clamp}\big(0.5 - d(x, y),\ 0,\ 1\big)$$
 
-The final result is enclosed within a scalable SVG container with a 3D specular light-reflecting gradient:
+The card is wrapped in a scalable SVG container with a light-reflecting gradient:
 
 ```xml
 <linearGradient id="bevelSpecular" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" stop-color="rgba(255,255,255,0.45)"/>
-  <stop offset="60%" stop-color="rgba(255,255,255,0.12)"/>
-  <stop offset="100%" stop-color="rgba(0,0,0,0.22)"/>
+  <stop offset="0%"   stop-color="#FFFFFF" stop-opacity="0.45"/>
+  <stop offset="60%"  stop-color="#FFFFFF" stop-opacity="0.12"/>
+  <stop offset="100%" stop-color="#000000" stop-opacity="0.22"/>
 </linearGradient>
 ```
 
----
-
-## 🎮 3D Real-Physics & Interaction Engine
-
-When inspecting a card in the **Card Detail Screen**, Twiin runs a 60 FPS real-physics simulation:
-
-### 1. Real-Time Accelerometer & Gyroscope 3D Tilt
-Using device motion sensors, the card leans and catches ambient light according to real-world gravitational tilt:
-
-$$\theta_y = \text{clamp}\left( -\frac{a_x}{9.8} \times 0.16, -0.16, 0.16 \right) \quad \text{(Yaw)}$$
-
-$$\theta_x = \text{clamp}\left( \frac{a_y - 4.5}{9.8} \times 0.12, -0.12, 0.12 \right) \quad \text{(Pitch)}$$
-
-An exponential low-pass filter ensures ultra-silky movement with zero jitter:
-
-$$\theta_{\text{smooth}}(t) = \theta_{\text{smooth}}(t-1) + 0.15 \cdot \left( \theta_{\text{target}}(t) - \theta_{\text{smooth}}(t-1) \right)$$
-
-### 2. Double-Sided 3D Card Flip
-A physical $180^\circ$ Y-axis flip with a 3D perspective projection matrix ($M_{3,2} = 0.001$). At $90^\circ$, back-face culling swaps the front face for the back face (magnetic stripe, barcode, QR code, signature strip).
-
-### 3. Automatic 100% HDR Display Brightness
-The moment you open any card's detail page, Twiin automatically commands native window hardware to **100% maximum brightness**. Barcode scanners, optical turnstiles, and payment POS terminals read your screen instantly on the first try. Exiting the screen immediately restores your original system brightness.
+</details>
 
 ---
 
-## 🔒 Security Vault Architecture
+## 🎮 3D Card Physics Engine
+
+Open any card and Twiin runs a smooth, 60 FPS interactive 3D view:
+
+- **Motion-sensor tilt**: the card leans and catches light as you move your phone
+- **Silky smoothing**: an exponential low-pass filter removes jitter
+- **True double-sided flip**: a 180° Y-axis flip with perspective, showing the back (magnetic stripe, barcode, QR code, signature)
+- **Auto max-brightness**: barcode scanners, turnstiles and POS terminals read your screen on the first try; your original brightness is restored when you exit
+
+<details>
+<summary><b>📐 Show the tilt math</b></summary>
+
+$$\theta_y = \text{clamp}\!\left(-\frac{a_x}{9.8}\times 0.16,\ -0.16,\ 0.16\right) \quad \text{(yaw)}$$
+
+$$\theta_x = \text{clamp}\!\left(\frac{a_y - 4.5}{9.8}\times 0.12,\ -0.12,\ 0.12\right) \quad \text{(pitch)}$$
+
+$$\theta_{\text{smooth}}(t) = \theta_{\text{smooth}}(t{-}1) + 0.15\,\big(\theta_{\text{target}}(t) - \theta_{\text{smooth}}(t{-}1)\big)$$
+
+The flip uses a perspective projection with $M_{3,2} = 0.001$; at 90° the front face swaps to the back face.
+
+</details>
+
+---
+
+## 🔒 Security & Privacy
 
 ```
-┌────────────────────────────────────────────────────────┐
-│                   Android / iOS OS                     │
-├────────────────────────────────────────────────────────┤
-│  App Layer: Biometrics (Fingerprint / Face ID / Keyguard) │
-│  PIN Engine: 4 or 6 Digit Hash-Salted Entry            │
-├────────────────────────────────────────────────────────┤
-│  Kernel Sandbox Isolation: .twiin_vault (POSIX 0700)   │
-│  Cryptographic Engine: 256-Bit Master AES / SHA-256    │
-│  Zero Network Sockets: No HTTP, No Telemetry, No Cloud │
-└────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────┐
+│                  Android / iOS                       │
+├──────────────────────────────────────────────────────┤
+│  Lock layer:  Biometrics (Fingerprint / Face ID)     │
+│               + in-app PIN fallback (4 or 6 digits)  │
+├──────────────────────────────────────────────────────┤
+│  App-private sandboxed vault  (.twiin_vault)         │
+│  AES-256 encryption  •  SHA-256 hashed + salted PIN  │
+│  No ads  •  No analytics  •  No cloud sync           │
+└──────────────────────────────────────────────────────┘
 ```
 
-- **Zero Cloud Footprint**: Data never touches a remote server. Everything is stored strictly on-device.
-- **Sandboxed Vault**: Files reside in an isolated `.twiin_vault` directory inaccessible to other installed applications.
-- **Double-Layer Authentication**: Supports native device biometrics with graceful fallback to an in-app PIN.
-- **Anti-Brute Force Protection**: Progressively increases lock durations upon repeated incorrect attempts.
-- **Zero-Footprint Memory Scrubbing**: Sensitive encryption keys and card numbers are cleared from RAM when the app is backgrounded.
+- **Offline-first**: your cards never leave your device
+- **Sandboxed vault**: files live in the app's private storage, inaccessible to other apps
+- **Double-layer lock**: native biometrics with PIN fallback
+- **Brute-force protection**: lock time increases after repeated wrong attempts
+- **Memory hygiene**: sensitive keys and card numbers are cleared from RAM when the app goes to the background
+
+> 🛡️ Found a vulnerability? Please open a private security advisory on GitHub instead of a public issue.
 
 ---
 
-## 📦 APK Size Optimization & Compression
+## 📦 Small APK, Fast Install
 
-Twiin includes an aggressive optimization pipeline in `build.gradle.kts` and `proguard-rules.pro` that reduces release binary size from **100MB+ down to ~25MB**:
+Twiin ships with an aggressive release-optimization setup that brings the binary from **100 MB+ down to roughly 25 MB**:
 
-1. **Native Library ZIP Compression (`useLegacyPackaging = true`)**: Deflates `.so` binaries inside the APK.
-2. **Resource Shrinking (`isShrinkResources = true`)**: Strips unused XML layouts and assets.
-3. **R8 Full Mode (`android.enableR8.fullMode=true`)**: Aggressive cross-class inlining and dead code pruning.
-4. **Localization Pruning (`resourceConfigurations += listOf("en")`)**: Removes strings for 80+ foreign languages bundled by third-party SDKs.
-5. **Per-ABI Splitting**: Generates independent APKs for each CPU architecture.
+1. **Compressed native libraries** (`useLegacyPackaging = true`)
+2. **Resource shrinking** (`isShrinkResources = true`)
+3. **R8 code shrinking and optimization**
+4. **Locale pruning** to remove unused translations from third-party SDKs
+5. **Per-ABI split APKs** for each CPU architecture
 
-### Ultra-Compressed Build Command:
-
-```powershell
-flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/app/outputs/symbols --tree-shake-icons
+```bash
+flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/app/outputs/symbols
 ```
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Getting Started (Build From Source)
 
 ### Prerequisites
-- [Flutter SDK](https://docs.flutter.dev/get-started/install) (v3.24.0 or higher)
-- Android SDK (API Level 26 or higher)
+
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) 3.24.0 or higher
+- Android SDK (API level 26+)
 - Java 17+
 
-### Installation & Run
+### Run it
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourusername/twiin.git
-   cd twiin
-   ```
+```bash
+# 1. Clone
+git clone https://github.com/sanjay434343/twiin.git
+cd twiin
 
-2. **Install Flutter packages:**
-   ```bash
-   flutter pub get
-   ```
+# 2. Install dependencies
+flutter pub get
 
-3. **Run on a connected device:**
-   ```bash
-   flutter run
-   ```
+# 3. Run on a connected device or emulator
+flutter run
 
-4. **Build a production release:**
-   ```bash
-   flutter build apk --release --split-per-abi
-   ```
+# 4. Build a release APK
+flutter build apk --release --split-per-abi
+```
+
+---
+
+## ❓ FAQ
+
+**What is Twiin?**
+Twiin is a free, open-source Flutter app that scans physical cards and stores them as clean, encrypted digital copies on your phone, fully offline.
+
+**Does Twiin work without internet?**
+Yes. Scanning, storage, viewing and PDF export all work offline.
+
+**Which cards can I store?**
+ID cards, Aadhaar cards, ATM/debit/credit cards, driving licenses, smart cards, loyalty cards and business cards.
+
+**Is my card data uploaded anywhere?**
+No. Twiin has no cloud sync, no accounts and no analytics. Everything stays in the app's encrypted private storage.
+
+**Can I print my cards?**
+Yes. Use the built-in editor to position and size your cards, then export a PDF to print.
+
+**Does it work on iPhone?**
+Twiin is built with Flutter for both Android and iOS.
+
+**Is Twiin free?**
+Yes, it's open source under the MIT license.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are welcome and appreciated!
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
+1. Fork the project
+2. Create a feature branch: `git checkout -b feature/AmazingFeature`
+3. Commit your changes: `git commit -m 'Add AmazingFeature'`
+4. Push the branch: `git push origin feature/AmazingFeature`
 5. Open a Pull Request
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for details.
+
+---
+
+## ⭐ Support the Project
+
+If Twiin is useful to you, **give it a star** ⭐ and share it. It helps more people discover a private, offline alternative to cloud wallet apps.
 
 ---
 
 ## 📄 License
 
-Distributed under the **MIT License**. See [LICENSE](LICENSE) for more information.
+Distributed under the **MIT License**. See [LICENSE](LICENSE).
+
+## 👨‍💻 Author
+
+Built by **Sanjay** · [GitHub](https://github.com/sanjay434343) · [Portfolio](https://sanjay-m.netlify.app)
+
+---
 
 <div align="center">
-  <sub>Engineered with precision for absolute privacy and digital elegance.</sub>
+  <sub>Twiin: the private, offline digital card wallet. Engineered with precision for absolute privacy.</sub>
 </div>
+
+<!--
+Search keywords: digital card wallet, offline wallet app, ID card scanner, Aadhaar card holder app, ATM card storage app, smart card digital copy, document scanner Flutter, secure card vault, AES-256 encrypted wallet, 3D card viewer, open source wallet app, Flutter wallet app, privacy-first wallet, card to PDF
+-->
