@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/sanjay434343/twiin/main/assets/brand_logo.png" alt="Twiin app logo – offline digital card wallet for ID, Aadhaar, ATM and smart cards" width="120"/>
+  <img src="logo.png" alt="Twiin app logo – offline digital card wallet for ID, Aadhaar, ATM and smart cards" width="120"/>
 
   # Twiin – Offline Digital Card Wallet for ID, Aadhaar, ATM & Smart Cards
 
