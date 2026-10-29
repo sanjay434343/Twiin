@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/sanjay434343/Twiin/main/assets/logo.png" alt="Twiin Logo" width="130" onerror="this.onerror=null; this.src='https://img.icons8.com/fluency/144/credit-card-front.png';"/>
+  <img src="logo.png" alt="Twiin Logo" width="130" onerror="this.onerror=null; this.src='https://img.icons8.com/fluency/144/credit-card-front.png';"/>
 
   # Twiin
   ### The Hardware-Secured, Real-Physics Digital Card & Document Engine
