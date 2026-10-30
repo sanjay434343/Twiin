@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://raw.githubusercontent.com/sanjay434343/Twiin/main/assets/logo.png" alt="Twiin logo" width="112">
+  <img src="logo.png" alt="Twiin logo" width="112">
 
   # Twiin
 
