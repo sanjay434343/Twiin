@@ -1,0 +1,23 @@
+# Twiin
+
+> Twiin is a free, open-source, 100% offline card wallet for Android. It turns physical cards, IDs, boarding passes and tickets into interactive 3D digital twins you can tilt, flip and print at real card size. No account, no cloud, no tracking.
+
+Twiin is made by Sanjay (independent developer, Tamil Nadu, India). It is built with Flutter. Cards are stored only on the device, sensitive fields are encrypted with AES-256, and the app is protected by PIN or biometrics. Twiin keeps digital references to cards; it is not a payment, NFC or government ID credential.
+
+## Key facts
+- Platform: Android 8 and above (APK download)
+- Price: free, MIT license
+- Privacy: no account, no servers, no tracking; data stays on the phone
+- Scanner: drag four corners to straighten a crooked photo; flash glare is removed
+- Viewing: gyroscope tilt with holographic shine, true front-to-back flip, full screen brightness so barcodes and QR codes scan
+- Printing: fronts and backs on A4 at 85.6 x 54 mm (print at 100% / actual size) with cut and fold guides
+- Backups: sealed in an encrypted file the user controls
+
+## Links
+- [Home page](https://twiin.netlify.app/): overview, problem and solution, FAQ, download
+- [Why Twiin](https://twiin.netlify.app/#why): the problems with loose cards and gallery photos, and how Twiin solves them
+- [FAQ](https://twiin.netlify.app/#faq): answers about privacy, offline use, printing and installation
+- [Download latest APK](https://github.com/sanjay434343/Twiin/releases/latest/download/app-release.apk)
+- [All releases](https://github.com/sanjay434343/Twiin/releases)
+- [Source code](https://github.com/sanjay434343/Twiin)
+- [Developer portfolio](https://sanjay-m.netlify.app)
