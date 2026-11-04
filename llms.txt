@@ -14,9 +14,9 @@ Twiin is made by Sanjay (independent developer, Tamil Nadu, India). It is built 
 - Backups: sealed in an encrypted file the user controls
 
 ## Links
-- [Home page](https://twiin.netlify.app/): overview, problem and solution, FAQ, download
-- [Why Twiin](https://twiin.netlify.app/#why): the problems with loose cards and gallery photos, and how Twiin solves them
-- [FAQ](https://twiin.netlify.app/#faq): answers about privacy, offline use, printing and installation
+- [Home page](https://twiin-app.vercel.app/): overview, problem and solution, FAQ, download
+- [Why Twiin](https://twiin-app.vercel.app/#why): the problems with loose cards and gallery photos, and how Twiin solves them
+- [FAQ](https://twiin-app.vercel.app/#faq): answers about privacy, offline use, printing and installation
 - [Download latest APK](https://github.com/sanjay434343/Twiin/releases/latest/download/app-release.apk)
 - [All releases](https://github.com/sanjay434343/Twiin/releases)
 - [Source code](https://github.com/sanjay434343/Twiin)
