@@ -29,4 +29,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://twiin.netlify.app/sitemap.xml
+Sitemap: https://twiin-app.vercel.app/sitemap.xml
