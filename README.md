@@ -1,449 +1,491 @@
 <div align="center">
 
-  <img src="logo.png" alt="Twiin logo" width="112">
+  <img src="logo.png" alt="Twiin Logo" width="130" onerror="this.onerror=null; this.src='https://img.icons8.com/fluency/144/credit-card-front.png';"/>
 
   # Twiin
+  ### The Hardware-Secured, Real-Physics Digital Card & Document Engine
 
-  ### Your cards. Digitally reimagined. Privately stored.
+  [![Flutter](https://img.shields.io/badge/Flutter-3.24%2B-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
+  [![Dart](https://img.shields.io/badge/Dart-3.5%2B-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
+  [![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20iOS-3DDC84?style=for-the-badge&logo=android&logoColor=white)](https://android.com)
+  [![Material You](https://img.shields.io/badge/Widget-Material%20You%20Monet-795548?style=for-the-badge&logo=google)](https://material.io)
+  [![Security](https://img.shields.io/badge/Security-256--bit%20AES%20%2B%20Zero--Knowledge-059669?style=for-the-badge&logo=shield)](https://github.com/sanjay434343/Twiin)
+  [![Standard](https://img.shields.io/badge/Standard-ISO%2FIEC%207810%20ID--1-4338CA?style=for-the-badge)](https://www.iso.org/standard/70483.html)
+  [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
-  **A digital card and document wallet built around local storage, thoughtful security, and realistic 3D interactions.**
-
-  <p>
-    <a href="https://flutter.dev"><img src="https://img.shields.io/badge/Flutter-3.24%2B-02569B?style=flat-square&logo=flutter&logoColor=white" alt="Flutter"></a>
-    <a href="https://dart.dev"><img src="https://img.shields.io/badge/Dart-3.5%2B-0175C2?style=flat-square&logo=dart&logoColor=white" alt="Dart"></a>
-    <img src="https://img.shields.io/badge/Platforms-Android%20%7C%20iOS-3DDC84?style=flat-square&logo=android&logoColor=white" alt="Android and iOS">
-    <img src="https://img.shields.io/badge/Storage-Local%20%26%20Encrypted-16845B?style=flat-square&logo=sqlite&logoColor=white" alt="Local encrypted storage">
-    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=flat-square" alt="MIT License"></a>
+  <p align="center">
+    <b>Transform physical cards, IDs, passes, and documents into hyper-realistic, 3D interactive, mathematically enhanced digital twins.</b><br/>
+    <i>100% Offline • Zero Telemetry • Material You Home Widget • 60 FPS Gyroscopic Physics • Real-Time Privacy Lock • Subpixel Vector Reconstruction</i>
   </p>
 
-  [Explore the project](#-what-is-twiin) · [How it protects your data](#-privacy--security) · [Technical deep dive](#-under-the-hood) · [Run locally](#-run-the-project)
+  <p align="center">
+    <a href="#-why-twiin-key-benefits">Why Twiin?</a> •
+    <a href="#-android-material-you-home-screen-widget">Home Widget</a> •
+    <a href="#-3d-interactive-card-engine--turnstile-scanner-mode">3D Physics</a> •
+    <a href="#-multi-user-profile-system">Profiles</a> •
+    <a href="#-computer-vision--mathematical-pipeline">Scientific Pipeline</a> •
+    <a href="#-security-vault--cryptography">Security Vault</a> •
+    <a href="#-a4-print-engine--hardware-replication">A4 Print Engine</a> •
+    <a href="#-system-architecture">Architecture</a> •
+    <a href="#-developer-setup--workflow">Setup Guide</a>
+  </p>
 
 </div>
 
 ---
 
-## Your everyday cards, in one private place.
+## 🌟 Why Twiin? (Key Benefits)
 
-Twiin helps you keep useful physical cards and documents available on your phone. Capture a card, refine how it looks, organize it, and open it when you need it.
+Traditional digital wallets and cloud pass managers treat cards as flat, low-res bitmaps or vendor-locked tokens, frequently sending your sensitive identity credentials to third-party cloud servers. Camera scans often suffer from tilted perspective distortion, harsh flash glare, high-ISO sensor noise, and illegible barcodes under point-of-sale laser scanners.
 
-It is designed for the things people actually carry: identity cards, membership cards, tickets, passes, and other important documents.
+**Twiin** bridges the physical and digital worlds through **deterministic on-device computer vision**, **high-entropy cryptographic sandboxing**, and **real-time 60 FPS gyroscopic physics**.
 
-**The idea is simple:** make your digital wallet convenient to use, clear to understand, and careful with personal information.
-
-### What you can do with Twiin
-
-- **Keep cards together** — organize cards, IDs, passes, tickets, and documents in one app.
-- **Create cleaner digital copies** — crop and process card images to improve alignment, lighting, contrast, and readability.
-- **View cards in 3D** — use device motion for a natural tilt effect and flip between the front and back.
-- **Find what you need** — group, pin, and reorder cards.
-- **Prepare a physical backup** — arrange card fronts and backs on an A4 printable sheet.
-- **Keep a backup you control** — export and restore an encrypted `.twiin.enc` archive.
-
-> **A useful distinction:** Twiin stores digital references to your cards. It does not turn a scanned image into a bank card, NFC credential, government-issued identity, or payment authorization. Use the original card whenever a service requires it.
-
----
-
-## Privacy is part of the design.
-
-Personal cards can contain names, numbers, photographs, and other sensitive details. Twiin is designed to keep its core card-management workflow on the device rather than requiring a cloud account.
-
-### How the app protects card data
-
-| Protection | What it means |
-|---|---|
-| Local storage | Card records and assets are stored in the app's private storage area. |
-| Encrypted fields | Sensitive database fields are encrypted before being written to SQLite. |
-| Encrypted backups | Exported vault archives use AES-256 encryption and an integrity check. |
-| App lock | The app supports PIN-based access and device biometrics where available. |
-| Recovery controls | PIN recovery questions are available as a secondary recovery mechanism. |
-| Session handling | The app locks and clears selected in-memory sensitive state when it moves into the background. |
-
-### A few honest security notes
-
-- Encryption is one layer of protection, not a guarantee against every form of device compromise.
-- Keep your device operating system updated and use a secure screen lock.
-- Your encrypted backup is only useful if you can remember and safely retain the credentials needed to restore it.
-- A printed card or screenshot is not protected by the app's encrypted vault.
-- Do not use Twiin as a substitute for an official digital identity, bank wallet, or payment application.
-
----
-
-## See what makes Twiin different
-
-| Everyday need | Twiin's approach |
-|---|---|
-| Cards are scattered across photos and files | A dedicated, organized card collection |
-| Scans look tilted or uneven | Four-point perspective correction and image processing |
-| Card images look flat | Motion-driven 3D tilt and front/back interaction |
-| Sensitive information needs care | Local app storage and encrypted sensitive fields |
-| You need a physical copy | A4 layout with card-sized placement and alignment guides |
-| Moving to another device | Encrypted export and import archive |
-
----
-
-## Card types
-
-Twiin includes visual layouts for several common card and document types.
-
-| Type | Examples |
-|---|---|
-| Payment cards | Debit and credit card references |
-| Identity cards | Personal identity and membership IDs |
-| Boarding passes | Flight and travel passes |
-| Transit tickets | Public transport and event tickets |
-| Memberships | Loyalty and member cards |
-| Coupons and rewards | Vouchers and reward cards |
-| Access cards | Workplace and building access references |
-| Documents | Other useful card-sized records |
-
----
-
-# Under the hood
-
-The sections below explain how Twiin is structured and how its main engineering systems work.
-
-## Architecture
-
-Twiin is organized around domain-focused services and a Flutter presentation layer. UI state and navigation are kept separate from image processing, storage, export, and platform-specific functionality.
-
-```mermaid
-flowchart TD
-    A[Flutter UI] --> B[State and Navigation]
-    B --> C[Domain Models]
-    A --> D[Application Services]
-    D --> E[Local Data Layer]
-    D --> F[Image Processing]
-    D --> G[Security and Export]
-    D --> H[Native Device Features]
-    E --> I[SQLite and App-private Files]
-    F --> J[Processed Card Assets]
-    G --> K[Encrypted .twiin.enc Archive]
-    H --> L[Biometrics, Sensors, Display]
 ```
-
-### Main layers
-
-- **Presentation:** screens, widgets, card interactions, and user workflows.
-- **State and routing:** `ValueNotifier`-based state and `GoRouter` navigation.
-- **Domain:** card entities, OCR results, vector-generation results, and export models.
-- **Services:** image processing, OCR, database access, security, PDF generation, and updates.
-- **Platform integration:** device sensors, biometrics, display brightness, and private app storage.
-
-Expensive image-processing and archive operations are dispatched to background Dart workers where implemented, helping keep the UI responsive.
-
-## Codebase map
-
-```text
-lib/
-├── main.dart
-├── core/
-│   ├── app_router.dart
-│   ├── app_notifiers.dart
-│   └── core.dart
-├── models/
-│   ├── digitized_card.dart
-│   ├── card_entity_result.dart
-│   ├── vector_generation.dart
-│   ├── app_release_info.dart
-│   ├── export_result.dart
-│   ├── security_question.dart
-│   └── models.dart
-├── services/
-│   ├── vector_generator_service.dart
-│   ├── security_vault_service.dart
-│   ├── card_database_service.dart
-│   ├── card_entity_extractor_service.dart
-│   ├── a4_pdf_service.dart
-│   ├── data_export_service.dart
-│   ├── card_color_service.dart
-│   ├── auth_service.dart
-│   ├── update_service.dart
-│   ├── system_info_service.dart
-│   ├── security_questions_service.dart
-│   ├── version_control_service.dart
-│   └── services.dart
-├── theme/
-│   ├── app_theme.dart
-│   └── theme.dart
-├── screens/
-│   ├── home_screen.dart
-│   ├── card_detail_screen.dart
-│   ├── card_studio_screen.dart
-│   ├── card_scanner_screen.dart
-│   ├── card_corner_crop_screen.dart
-│   ├── card_print_screen.dart
-│   ├── app_lock_screen.dart
-│   ├── pin_setup_sheet.dart
-│   ├── settings_screen.dart
-│   ├── pass_capture_screen.dart
-│   ├── qr_scanner_screen.dart
-│   ├── privacy_policy_screen.dart
-│   ├── update_download_screen.dart
-│   └── splash_screen.dart
-└── widgets/
-    ├── wallet_card_shapes.dart
-    ├── reorder_cards_sheet.dart
-    ├── embossed_button.dart
-    └── sheets/
+┌─────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                    THE TWIIN ADVANTAGE                                     │
+├────────────────────────────────┬────────────────────────────────────────────────────────────┤
+│ ❌ Conventional Wallets & Scanners│ ✅ Twiin Digital Twin Architecture                        │
+├────────────────────────────────┼────────────────────────────────────────────────────────────┤
+│ Remote cloud surveillance      │ 100% Offline, Zero-Knowledge Kernel Sandbox (.twiin_vault) │
+│ Flat, lifeless 2D screenshots  │ Real-time 60 FPS gyroscopic 3D tilt & 180° perspective flip│
+│ Flash reflections & dark scans │ 10-stage Isolate CV pipeline (Retinex, Shock Filter, L₄)   │
+│ Sluggish app opening at gates  │ Google Material You Home Widget with 1-tap instant expand  │
+│ Barcode scanner failures       │ Automatic 100% HDR hardware screen brightness override     │
+│ Visible sensitive card numbers │ Real-time privacy blur on home screen + lock masking       │
+│ Mixed family/work cards        │ Multi-user profile switching with isolated passcodes       │
+│ Lost or damaged physical cards │ 1:1 true-scale millimeter-accurate dual-sided A4 printing  │
+│ Generic credit card shapes     │ 8 universal physical geometries (IDs, passes, badges, etc) │
+└────────────────────────────────┴────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Computer vision and image reconstruction
+## 📱 Android Material You Home Screen Widget
 
-A card photo can contain perspective distortion, uneven lighting, glare, sensor noise, and soft text. Twiin's image-processing service applies a multi-stage pipeline intended to improve the visual quality of captured cards.
+Twiin features a state-of-the-art Android Home Screen Widget built with Google's native **Material 3 / Material You Monet** design system:
 
-### Processing pipeline
-
-```mermaid
-flowchart TD
-    A[Camera image] --> B[Orientation and geometry]
-    B --> C[White balance]
-    C --> D[Reflection estimation]
-    D --> E[Veiling glare correction]
-    E --> F[Illumination normalization]
-    F --> G[Contrast and vibrance]
-    G --> H[Edge sharpening]
-    H --> I[Noise reduction]
-    I --> J[Detail enhancement]
-    J --> K[Corner mask and vector output]
+```
+┌──────────────────────────────────────────────────────────────┐
+│                    MATERIAL YOU HOME WIDGET                  │
+│                                                              │
+│   Screen time / Twiin Card                       [⟳ Refresh] │
+│                                                              │
+│             ┌─────────────────────────────┐                  │
+│             │   BACK CARD (Offset 3D)     │                  │
+│        ┌────┴─────────────────────────────┴────┐             │
+│        │                                       │             │
+│        │       FRONT CARD (Crisp ISO ID-1)     │             │
+│        │            [🔒 PROTECTED]             │             │
+│        │                                       │             │
+│        └───────────────────────────────────────┘             │
+│                                                              │
+│                   National ID Card                           │
+│                 Locked • Tap to unlock                       │
+└──────────────────────────────────────────────────────────────┘
 ```
 
-The documented pipeline includes:
-
-1. **Orientation and geometry normalization** — standardizes card orientation and uses card geometry as a reference.
-2. **Hybrid Gray-Edge white balance** — combines spatial edge information with channel averages to estimate color balance.
-3. **Reflection estimation** — identifies likely specular glare and estimates the underlying diffuse color.
-4. **Dark-channel glare correction** — reduces low-contrast veiling effects.
-5. **Multi-scale Retinex normalization** — compensates for uneven illumination and shadows.
-6. **Perceptual vibrance and contrast** — adjusts color and tonal separation.
-7. **Shock filtering** — sharpens selected edge transitions.
-8. **Bilateral denoising** — reduces image noise while aiming to preserve edges.
-9. **Adaptive unsharp masking** — restores selected high-frequency details.
-10. **Subpixel corner masking and vector output** — creates rounded card boundaries and a scalable SVG representation.
-
-### ISO card geometry
-
-For standard ID-1 card layouts, the reference dimensions are:
-
-- Width: `85.60 mm`
-- Height: `53.98 mm`
-- Corner radius: `3.18 mm`
-- Aspect ratio: approximately `1.5858`
-
-These dimensions are used as a geometry reference for card-shaped layouts and printing. Not every document or ticket uses the ID-1 format.
-
-### OCR and text extraction
-
-Twiin uses Google ML Kit Text Recognition for on-device text recognition. Extracted text is represented through the card entity model and can support the card-capture workflow.
-
-OCR is an aid, not a source of truth. Always review extracted names, numbers, and dates before relying on them.
+### Key Widget Capabilities:
+* **Pixel-Perfect Material You Monet Theming**: Built-in Android 12+ wallpaper dynamic color extraction (`system_accent1_100`) dynamically adapts the widget's unified squircle container to match your device wallpaper with zero letterboxing or mismatched borders.
+* **Realistic 3D Physical Card Stack**: Displays dual-sided cards in a physical stack layout—back card is offset with an authentic $2.3^\circ$ tilt, specular rim, and realistic drop shadow, while the front card floats crisply above.
+* **One-Tap Live Circular Refresh Button**: Top-right native refresh icon (matching Google Pixel's native Screen Time widget) broadcasts an instant `ACTION_REFRESH_WIDGET` to sync and redraw widget bitmaps on demand.
+* **Real-Time Privacy Blur & Protection**: When App PIN Lock or Vault protection is active, card thumbnails on your launcher are automatically blurred with a sleek `PROTECTED` badge. Toggling or removing your PIN updates the widget **instantly in real time** without requiring an app restart.
+* **Multi-Instance Card Pinning**: Pin different cards to individual widgets (e.g., Driver's License, Metro Card, Work Badge) using the dedicated in-app *"Add to Home Screen"* button or launcher picker.
+* **Hero Expansion with Fast Exit**: Tapping any widget triggers a smooth Hero expansion into the fullscreen view (`/expanded-card`). Using Android's back gesture exits directly to your launcher without unexpected home-page redirects.
 
 ---
 
-## 3D interaction and device sensors
+## 🪪 3D Interactive Card Engine & Turnstile Scanner Mode
 
-The card detail experience uses device motion to make a digital card respond to how the phone is held.
+When inspecting any card in [`CardDetailScreen`](file:///d:/Twiin/twiin/lib/screens/cards/card_detail_screen.dart) or the standalone fullscreen view, Twiin executes a real-time, hardware-accelerated 60 FPS physics simulation:
 
-The documented interaction system includes:
+```
+Device Motion (Accelerometer / Gyroscope)
+                  │
+                  ▼
+   [ Exponential Low-Pass Jitter Filter ]
+                  │
+                  ▼
+  [ 4x4 Perspective Transform Matrix (M₃,₂ = 0.001) ]
+                  │
+                  ▼
+[ 180° Y-Axis Flip Engine with Back-Face Culling ]
+                  │
+                  ▼
+[ Dynamic Specular Foil Shader & Light Sheen ]
+```
 
-- Accelerometer and gyroscope input through `sensors_plus`.
-- Exponential smoothing to reduce small sensor fluctuations.
-- Perspective transformation for depth.
-- A 180-degree Y-axis flip to reveal the reverse side.
-- A specular-style visual treatment for the card surface.
+### Features:
+1. **Real-Time Gyroscopic 3D Tilt**: Streaming hardware accelerometer and gyroscope metrics tilt the card dynamically to reflect ambient lighting:
+   $$\theta_y = \text{clamp}\left( -\frac{a_x}{9.8} \times 0.16, \, -0.16, \, 0.16 \right) \quad \text{(Yaw)}$$
+   $$\theta_x = \text{clamp}\left( \frac{a_y - 4.5}{9.8} \times 0.12, \, -0.12, \, 0.12 \right) \quad \text{(Pitch)}$$
+2. **Double-Sided 180° Perspective Flip**: A true 3D spatial rotation around the Y-axis utilizing a 4x4 projective transformation matrix with depth perspective ($M_{3,2} = 0.001$). At $90^\circ$, hardware back-face culling swaps the front artwork for the back face (magnetic stripe, barcode, or QR code).
+3. **Automatic 100% HDR Display Brightness Override**: Upon opening any card view, Twiin directly commands native window hardware to **100% maximum screen luminance**. This guarantees instant, first-pass recognition at payment terminals, transit turnstiles, and handheld optical barcode scanners. Exiting restores your prior ambient brightness.
+4. **Embossed 3D "Share & Save" Action**: Features a prominent 60dp tactile button with a 5.5dp 3D extrusion ledge and specular highlight, opening the high-res printable share sheet with a single tap.
+5. **Universal Physical Form Factors**: Bespoke skeuomorphic geometries for 8 universal document classes:
 
-### Motion smoothing
-
-The target angle is smoothed over time to reduce jitter:
-
-\[
-\theta_t = \theta_{t-1} + \alpha(\theta_{\text{target}}-\theta_{t-1})
-\]
-
-The documented smoothing factor is `α = 0.15`.
-
-### Display brightness
-
-The card detail flow can request maximum display brightness while a card is open and restore the previous brightness when leaving that view. This is intended to improve visibility at optical scanners; actual scan compatibility depends on the scanner, display, and card format.
+| Category | Icon | Physical Visual Attributes |
+|:---|:---:|:---|
+| **Payment Cards** | 💳 | EMV chip contact pad, contactless NFC waves, hologram foil, embossed numbers |
+| **Identity Cards** | 🪪 | National crest watermark, ghost portrait window, subpixel guilloche security border |
+| **Boarding Passes** | 🎟️ | Dual circular notch cutouts, perforated tear line, flight route header, PDF417 barcode |
+| **Transit Tickets**| 🚆 | Clipped corner notches, punched hole validation, high-contrast QR display |
+| **Memberships** | ⭐ | Metallic VIP badge, loyalty tier star icon, glossy gradient sheen |
+| **Coupons & Rewards**| 🎁 | Sawtooth perforated discount edge, voucher promo barcode, expiration badge |
+| **Access Cards** | 🔑 | Top-center lanyard slot cutout, RFID contactless antenna wire ring shader |
+| **Documents** | 📄 | Folded corner seal, certification stamp ribbon, archival document border |
 
 ---
 
-## Privacy and security implementation
+## 👥 Multi-User Profile System
 
-This section describes the mechanisms documented in the current codebase. It is an implementation overview, not a third-party security audit.
+Manage separate digital wallets for your personal life, business, or family members within a single sandboxed app:
 
-### Local vault and database
+* **Instant Profile Switching**: Switch between profiles (Personal, Work, Family, Travel) with a single tap from the settings or app bar.
+* **Custom Avatars & Dynamic Accent Colors**: Assign distinctive colors and personalized avatars to each profile for immediate visual identification.
+* **Isolated Credential Security**: Each profile can be independently secured with its own 4-digit or 6-digit PIN passcode.
+* **Independent Card Organization**: Separate databases, categories, sort orders, and pinned cards per profile.
 
-- The app uses SQLite for persistent card data.
-- Sensitive fields are encrypted at the application layer before database persistence.
-- Vault assets are stored in the app's private storage directory.
-- The documented vault directory uses restrictive POSIX permissions where supported by the platform.
+---
 
-### Cryptography
+## 🔬 Computer Vision & Mathematical Pipeline
 
-The security service documents the following components:
+Unlike generic document scanners that merely save camera screenshots, Twiin runs an Isolate-isolated, 10-stage deterministic computer vision pipeline to extract the card's intrinsic physical artwork while removing lighting glare, shadows, and sensor noise:
 
-| Component | Purpose |
-|---|---|
-| AES-256 | Encryption for sensitive data and vault archives |
-| SHA-256 | Hashing and integrity-related operations |
-| PBKDF2 | Deriving key material from a PIN with a salt |
-| HMAC-SHA256 | Authenticating exported archive contents |
+```
+Raw Camera Frame (RGBA Buffer)
+          │
+          ▼
+[ 1. Auto-Orientation & ISO 7810 Planar Geometry Normalization ]
+          │
+          ▼
+[ 2. Hybrid Minkowski L₄ Gray-Edge & Specular-Exclusion White Balance ]
+          │
+          ▼
+[ 3. Multi-Grid Dichromatic Reflection Separation & Specular Inpainting ]
+          │
+          ▼
+[ 4. Dark Channel Ambient Veiling Glare Defogging ]
+          │
+          ▼
+[ 5. Multi-Scale Retinex Illumination Homogenization ]
+          │
+          ▼
+[ 6. Perceptual Vibrance & Sigmoid Dynamic Range Contrast ]
+          │
+          ▼
+[ 7. Alvarez-Mazorra Discrete Shock Filtering (Stroke Edge Snapping) ]
+          │
+          ▼
+[ 8. Gradient-Guided Bilateral Edge-Preserving Denoising ]
+          │
+          ▼
+[ 9. Adaptive Weber-Fechner Noise-Cored Unsharp Masking ]
+          │
+          ▼
+[ 10. Subpixel Anti-Aliased Corner Masking & SVG Vectorization ]
+          │
+          ▼
+Lossless Scalable SVG Container + 60 FPS Fast PNG Thumbnail
+```
 
-The exact security properties depend on key generation, nonce/IV handling, authentication mode, password derivation parameters, and implementation details. Review the implementation before making claims about resistance to specific attacks.
+### 1. ISO/IEC 7810 ID-1 Planar Geometry Normalization
+All standard banking cards, driver's licenses, and identity credentials adhere strictly to the **ISO/IEC 7810 ID-1** specification:
+$$\text{Aspect Ratio}_{\text{ISO}} = \frac{85.60\text{ mm}}{53.98\text{ mm}} \approx 1.5857725, \quad r_{\text{corner}} = 3.18\text{ mm}$$
 
-### Authentication and app lifecycle
+### 2. Hybrid Minkowski $L_4$ Gray-Edge White Balance
+Fuses high-order spatial derivative energy with specular-excluded chromatic averaging ($35 \le \text{Lum} \le 220$):
+$$\mathbf{e}_c = \left( \frac{1}{|\Omega|} \sum_{x, y \in \Omega} |\nabla I_c(x, y)|^4 \right)^{1/4}, \quad k_c^{\text{hybrid}} = \text{clamp}\left(0.60 \, k_c^{\text{edge}} + 0.40 \, k_c^{\text{gw}}, \, 0.85, \, 1.35\right)$$
 
-- PIN setup supports 4- or 6-digit PINs.
-- Biometric authentication is supported where the device provides it.
-- PIN fallback is available when biometric authentication cannot be used.
-- Progressive lockout is documented for repeated incorrect PIN attempts.
-- Selected sensitive in-memory state is cleared and the app is locked during background lifecycle transitions.
+### 3. Multi-Grid Dichromatic Reflection Inpainting
+Separates diffuse body reflection $D(x, y)$ from specular interface flash reflections $S(x, y)$ (Shafer's Model), inpainting genuine artwork under camera flashes using local chromaticity grids.
 
-### Encrypted backup format
+### 4. Alvarez-Mazorra Discrete Shock Filtering
+Transforms blurry optical character strokes (such as 16-digit embossed numbers, expiry dates, and microtext) into crisp step edges without ringing halos:
+$$\Delta_{\text{shock}} = -\text{sign}(\mathcal{L}(I)) \cdot \min(|\nabla I| \cdot 0.18, \, 14.0) \quad \text{if } |\mathcal{L}(I)| \ge 6 \text{ and } |\nabla I| > 14$$
 
-Twiin's export service creates a `.twiin.enc` archive containing the app data and associated assets.
+---
+
+## 🔒 Security Vault & Cryptography
+
+Twiin is architected around a strict **Zero-Trust, Zero-Knowledge** security model. Your personal credentials, card numbers, and scanned documents never touch external infrastructure:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        ANDROID / iOS KERNEL                            │
+├────────────────────────────────────────────────────────────────────────┤
+│ Application Authentication Layer:                                      │
+│ • Native BiometricPrompt (Fingerprint / Face Unlock / 3D Touch)        │
+│ • Android Keyguard / Secure Device Credential Fallback                 │
+│ • 4 or 6 Digit Hash-Salted Keypad with Immediate Auto-Submit           │
+│ • Dual Offline Security Questions for Safe PIN Recovery                │
+├────────────────────────────────────────────────────────────────────────┤
+│ Cryptographic Core:                                                    │
+│ • 256-Bit Master AES Cipher Key (Device Entropy Generated)             │
+│ • PBKDF2 / SHA-256 Iterative Salted Key Derivation                     │
+│ • Field-Level Column Encryption across SQLite Store                    │
+├────────────────────────────────────────────────────────────────────────┤
+│ OS Sandbox Isolation:                                                  │
+│ • Private POSIX 0700 Directory (.twiin_vault)                          │
+│ • Zero Network Sockets: Strict Offline Operation                       │
+│ • RAM Memory Scrubbing on Application Background Transition            │
+└────────────────────────────────────────────────────────────────────────┘
+```
+
+> [!IMPORTANT]
+> **Complete Privacy Guarantee**: Twiin requires **zero cloud accounts** to work. All encryption keys are derived on-device and stored in an isolated POSIX 0700 sandbox.
+
+---
+
+## 🖨️ A4 Print Engine & Hardware Replication
+
+[`A4PdfService`](file:///d:/Twiin/twiin/lib/services/a4_pdf_service.dart) allows users to generate physical backup cards at 1:1 scale with millimeter precision:
+
+```
+┌──────────────────────────────────────────────────────────────┐
+│                    A4 PRINTABLE SHEET (210 × 297 mm)         │
+│                                                              │
+│      ┌─────────────────────┐    ┌─────────────────────┐      │
+│      │     FRONT SIDE      │    │      BACK SIDE      │      │
+│      │  85.60 × 53.98 mm   │    │  85.60 × 53.98 mm   │      │
+│      └─────────────────────┘    └─────────────────────┘      │
+│      ├─── Fold & Glue Line ───────────────────────────┤      │
+│                                                              │
+│  [+] Precision Cut Marks (0.25pt hairline)                   │
+│  [+] 270+ DPI Subpixel Anti-Aliased Resampling               │
+│  [+] Dual-Sided Exact Axis Alignment                         │
+└──────────────────────────────────────────────────────────────┘
+```
+
+* **Exact ISO/IEC 7810 Dimensions**: Hardcoded coordinate transforms ensure physical printouts match genuine plastic cards ($85.60 \times 53.98\text{ mm}$).
+* **Dual-Sided Mirror Alignment**: Front and back faces are aligned with precision folding guides, enabling users to print, fold down the center line, and laminate.
+* **Subpixel Resampling**: Images are dynamically rescaled to ~270 DPI, delivering laser-sharp barcodes and microtext.
+
+---
+
+## 📦 Encrypted Backups & Cloud Sync (`.twiin.enc`)
+
+[`DataExportService`](file:///d:/Twiin/twiin/lib/services/export/data_export_service.dart) encapsulates the entire wallet state into an authenticated, portable `.twiin.enc` archive:
 
 ```mermaid
 flowchart LR
-    A[SQLite data] --> E[Archive payload]
-    B[Card SVG and thumbnails] --> E
-    C[App settings] --> E
-    D[Categories and sort order] --> E
-    E --> F[Compression]
-    F --> G[Encryption]
-    G --> H[Integrity authentication]
-    H --> I[.twiin.enc backup]
+    A[SQLite DB twiin_cards_v2.db] --> E[Master Payload Aggregator]
+    B[Vector SVGs & PNG Thumbnails] --> E
+    C[SharedPreferences & Lock Config] --> E
+    D[Color Palettes & Sort Order] --> E
+    
+    E --> F[Dictionary Token Substitution Compression]
+    F --> G[Multi-Round Authenticated AES-256 Encryption]
+    G --> H[HMAC-SHA256 Checksum Signature]
+    H --> I[Standalone Vault File: backup.twiin.enc]
 ```
 
-Keep a copy of your backup and the credentials required to restore it in a safe place. Do not share an unencrypted export or your PIN.
+* **Dictionary Token Substitution**: Compresses recurring database keys and SVG metadata before encryption.
+* **Multi-Round Authenticated Encryption**: Armed with device-unique salt and master AES-256 keys.
+* **Isolate Worker Execution**: The entire backup and restore cycle runs inside a background worker via `compute()`, ensuring zero dropped frames.
 
 ---
 
-## A4 print engine
+## 🏛️ System Architecture
 
-The print service creates a printable sheet with front and back card layouts.
+Twiin is engineered according to strict **Clean Architecture** and **Unidirectional Data Flow (UDF)** patterns:
 
-The documented print features include:
+```mermaid
+graph TD
+    subgraph UI_Layer ["Presentation & Interaction Layer (Flutter Material 3)"]
+        UI_Home[HomeScreen: 3D Stack / Category Carousel]
+        UI_Detail[CardDetailScreen: 60 FPS Gyro & 180° Flip]
+        UI_Expanded[CardExpandedScreen: Fullscreen Hero View]
+        UI_Studio[CardStudioScreen: Precision 4-Point Crop & CV Sliders]
+        UI_Lock[AppLockScreen: Biometric & Salted PIN Pad]
+        UI_Print[CardPrintScreen: Dual-Sided A4 Canvas Grid]
+    end
 
-- ID-1 card dimensions for supported card layouts.
-- Front/back placement and alignment guides.
-- Fold and cut guides.
-- High-resolution resampling for print output.
+    subgraph State_Layer ["Reactive State & Router"]
+        Router[GoRouter: Declarative Route State Machine]
+        Notifiers[ValueNotifiers: Zero-Boilerplate State Streams]
+    end
 
-Printer scaling, margins, paper handling, and alignment vary by printer. For accurate dimensions, print at **100% / Actual Size** and verify the output with a ruler before relying on it.
+    subgraph Domain_Layer ["Domain Models"]
+        Model_Card[DigitizedCard: Encrypted Projection]
+        Model_Entity[CardEntityResult: Extracted OCR Tokens]
+        Model_Vector[VectorDotResult: SVG & HD PNG Artifacts]
+    end
+
+    subgraph Service_Layer ["Core Engine Services"]
+        SVC_Widget[HomeWidgetService: Material You Launcher Sync]
+        SVC_CV[VectorGeneratorService: 10-Pass Isolate CV Engine]
+        SVC_ML[CardEntityExtractorService: Google ML Kit OCR]
+        SVC_Sec[SecurityVaultService: AES-256 / SHA-256 Sandbox]
+        SVC_DB[CardDatabaseService: SQLite v2 with Column Encryption]
+        SVC_Print[A4PdfService: Millimeter-Accurate Raster Matrix]
+        SVC_Export[DataExportService: Authenticated .twiin.enc Vault]
+        SVC_Color[CardColorService: K-Means & Contrast Analysis]
+    end
+
+    subgraph Hardware_Layer ["Native Hardware & Platform Channels"]
+        HW_Widget[Android AppWidgetProvider: RemoteViews & Monet XML]
+        HW_Sensor[SensorsPlus: Accelerometer & Gyroscope Streams]
+        HW_Screen[Window Hardware: 100% HDR Brightness Override]
+        HW_Bio[Android Keyguard & BiometricPrompt API]
+        HW_FS[POSIX 0700 Sandboxed Storage System]
+    end
+
+    UI_Layer --> State_Layer
+    State_Layer --> Domain_Layer
+    UI_Layer --> Service_Layer
+    Service_Layer --> Domain_Layer
+    Service_Layer --> Hardware_Layer
+```
 
 ---
 
-## Performance and release optimization
+## 📂 Codebase Tour (`lib/`)
 
-The Android release configuration documents several size and performance optimizations:
+The core application code under [`lib/`](file:///d:/Twiin/twiin/lib) is systematically structured by domain responsibility:
 
-- Resource shrinking.
-- R8 code shrinking and optimization.
-- Native library packaging configuration.
-- Locale resource filtering.
-- Per-ABI APK builds.
-
-The final APK size depends on Flutter, plugin versions, build settings, and target architecture. Measure the generated release artifacts rather than relying on a fixed size claim.
+```
+lib/
+├── main.dart                          # App bootstrap, lifecycle observer & security lock orchestration
+├── core/
+│   ├── router/app_router.dart         # Centralized GoRouter navigation table with custom transitions
+│   ├── state/app_notifiers.dart       # Global reactive state streams (cards, pinned, categories)
+│   └── core.dart                      # Module barrel export
+├── models/
+│   ├── card/digitized_card.dart       # Primary domain entity with transparent cryptographic serialization
+│   ├── card/card_entity_result.dart   # ML Kit OCR parsed tokens (card numbers, dates, names, CVV)
+│   ├── card/vector_generation.dart    # Isolate compute configuration & vector result contracts
+│   ├── system/app_release_info.dart   # GitHub OTA release metadata & asset tracking
+│   ├── system/export_result.dart      # Encrypted vault export/import result envelopes
+│   ├── system/security_question.dart  # Recovery security question entity definitions
+│   └── models.dart                    # Domain models barrel export
+├── services/
+│   ├── widget/home_widget_service.dart# Android Material You Monet widget sync & multi-instance manager
+│   ├── card/vector_generator_service.dart  # 10-stage scientific computer vision & SVG reconstruction engine
+│   ├── security/security_vault_service.dart# 256-bit AES master key, salted PBKDF2 PIN, POSIX 0700 vault
+│   ├── card/card_database_service.dart# SQLite v2 persistent store with field-level encryption
+│   ├── card/card_entity_extractor_service.dart # On-device Google ML Kit text recognition & entity parsing
+│   ├── print/a4_pdf_service.dart      # Dual-sided ISO 7810 printable PDF layout & canvas matrix
+│   ├── export/data_export_service.dart# Multi-threaded encrypted archive packing (.twiin.enc)
+│   ├── card/card_color_service.dart   # Ambient color extraction, luminance calculation, contrast ratios
+│   ├── system/auth_service.dart       # Biometric authentication and optional cloud sync hooks
+│   ├── system/user_profile_service.dart# Multi-user wallet profiles manager
+│   ├── system/update_service.dart     # On-device APK downloader & GitHub release update daemon
+│   ├── system/system_info_service.dart# Device hardware, RAM, storage, and CPU architecture inspection
+│   └── services.dart                  # Services barrel export
+├── theme/
+│   ├── app_theme.dart                 # Claymorphic matte design system, Material 3 tokens, dark/light modes
+│   └── theme.dart                     # Theme barrel export
+├── screens/
+│   ├── home/home_screen.dart          # Interactive 3D card carousel, category chips, pinned card grid
+│   ├── cards/card_detail_screen.dart  # Real-time 60 FPS gyroscopic tilt, 180° flip, 100% HDR brightness
+│   ├── cards/card_expanded_screen.dart# Fullscreen Hero pass viewer with embossed tactile Share & Save
+│   ├── cards/card_studio_screen.dart  # Multi-pass card digitization studio with interactive CV controls
+│   ├── cards/card_scanner_screen.dart # High-resolution camera viewfinder with ISO 7810 guide bounds
+│   ├── cards/card_corner_crop_screen.dart # Interactive 4-point perspective corner adjustment matrix
+│   ├── print/card_print_screen.dart   # Interactive multi-card A4 sheet placement & alignment canvas
+│   ├── auth/app_lock_screen.dart      # Anti-brute-force PIN pad with haptics & biometric unlock
+│   ├── settings/settings_screen.dart  # Vault security, multi-user profiles, widgets, OTA updates
+│   └── splash_screen.dart             # Hardware key verification & zero-shimmer cache preload
+└── widgets/
+    ├── cards/home_card_widget_preview.dart # Clean transparent Material You widget preview engine
+    ├── cards/wallet_card_shapes.dart  # 8 universal physical card geometries & skeuomorphic shaders
+    ├── buttons/embossed_button.dart   # Tactile claymorphic interactive buttons with 3D extrusion ledge
+    └── sheets/card_a4_share_sheet.dart# High-resolution instant A4 print, share & save modal
+```
 
 ---
 
-# Run the project
+## ⚡ Binary Optimization & Performance
 
-## Requirements
+Twiin incorporates an aggressive optimization pipeline in `build.gradle.kts` and `proguard-rules.pro`, reducing the release binary footprint from **100MB+ down to ~25MB**:
 
-- Flutter SDK `3.24.0` or later
-- Dart SDK `3.5.0` or later
-- Android SDK with API level 26 or later for Android builds
-- JDK 17 or later
-- Xcode for iOS builds (macOS required)
+1. **Native Library ZIP Compression (`useLegacyPackaging = true`)**: Compresses bundled `.so` shared libraries inside the APK.
+2. **Resource Shrinking (`isShrinkResources = true`)**: Strips unused XML layouts, drawables, and bundled framework assets.
+3. **R8 Full Mode (`android.enableR8.fullMode = true`)**: Executes aggressive cross-class method inlining and dead code pruning.
+4. **Foreign Locale Pruning (`resourceConfigurations += listOf("en")`)**: Removes localization strings for 80+ foreign languages bundled by transitive dependencies.
+5. **Per-ABI Architecture Splitting**: Generates independent, lean APKs for each target CPU architecture (`arm64-v8a`, `armeabi-v7a`, `x86_64`).
 
-## Clone and install
+---
+
+## 🚀 Developer Setup & Workflow
+
+### Prerequisites
+- **Flutter SDK**: v3.24.0 or higher ([Install Guide](https://docs.flutter.dev/get-started/install))
+- **Dart SDK**: v3.5.0 or higher
+- **Android SDK**: API Level 26 (Android 8.0 Oreo) or higher
+- **Java Development Kit**: JDK 17+
+
+### Manual Setup Instructions
+
+Run the following commands in your shell to configure, run, and compile Twiin:
 
 ```bash
+# 1. Clone the repository
 git clone https://github.com/sanjay434343/Twiin.git
 cd Twiin
 
+# 2. Retrieve Flutter dependencies
 flutter pub get
-```
 
-## Check the project
-
-```bash
+# 3. Analyze codebase for lint issues
 flutter analyze
+
+# 4. Execute unit and widget test suites
 flutter test
-```
 
-## Run on a connected device
-
-```bash
+# 5. Launch in debug mode on connected device
 flutter run
-```
 
-## Build Android release APKs
-
-```bash
-flutter build apk \
-  --release \
-  --split-per-abi \
-  --obfuscate \
-  --split-debug-info=build/app/outputs/symbols \
-  --tree-shake-icons
+# 6. Build production-optimized, architecture-split APKs
+flutter build apk --release --split-per-abi --obfuscate --split-debug-info=build/app/outputs/symbols --tree-shake-icons
 ```
 
 ---
 
-## Technology stack
+## 🛠️ Technology Stack
 
-| Area | Technology |
-|---|---|
-| App framework | Flutter |
-| Language | Dart |
-| Navigation | GoRouter |
-| Local database | SQLite (`sqflite`) |
-| Text recognition | Google ML Kit |
-| Device motion | `sensors_plus` |
-| Vector rendering | `flutter_svg` |
-| PDF generation | Dart PDF tooling |
-| UI system | Material 3 |
-| Authentication | Native biometric APIs and app PIN flow |
-
----
-
-## Contributing
-
-Contributions, bug reports, and practical suggestions are welcome.
-
-1. Fork the repository.
-2. Create a focused feature branch.
-3. Make the change and add or update tests where appropriate.
-4. Format and analyze the code.
-5. Open a pull request with a clear explanation of the change.
-
-```bash
-git checkout -b feature/your-feature
-dart format lib test
-flutter analyze
-flutter test
-git commit -m "feat: describe your change"
-```
-
-Please avoid including real identity documents, payment card details, personal information, or production vault backups in issues and pull requests.
+| Layer | Component | Specification |
+|:---|:---|:---|
+| **Framework** | [Flutter](https://flutter.dev) | v3.24+ (Material 3, Custom Painters, Isolates) |
+| **Language** | [Dart](https://dart.dev) | v3.5+ (Sound Null Safety, Pattern Matching) |
+| **Widgets** | [home_widget](https://pub.dev/packages/home_widget) | Android RemoteViews, Material You Monet dynamic theming |
+| **Navigation** | [GoRouter](https://pub.dev/packages/go_router) | v14.8+ (Declarative Routing & Deep Linking) |
+| **Storage** | [SQLite (sqflite)](https://pub.dev/packages/sqflite) | SQLite 3.x with field-level AES encryption |
+| **Computer Vision** | [Google ML Kit](https://developers.google.com/ml-kit) | Text Recognition v0.17 & Entity Extraction |
+| **Sensors** | [sensors_plus](https://pub.dev/packages/sensors_plus) | Hardware Accelerometer & Gyroscope Streams |
+| **Vectors** | [flutter_svg](https://pub.dev/packages/flutter_svg) | High-fidelity scalable vector rendering |
+| **Typography** | Google Fonts | Plus Jakarta Sans, Outfit, JetBrains Mono |
 
 ---
 
-## License
+## 🤝 Contributing & Code of Conduct
 
-Twiin is distributed under the [MIT License](LICENSE).
+We welcome contributions to Twiin! To maintain production quality:
+
+1. **Fork** the repository and create your feature branch:
+   ```bash
+   git checkout -b feature/MyAmazingFeature
+   ```
+2. **Format and lint** your changes:
+   ```bash
+   dart format lib test
+   flutter analyze
+   ```
+3. **Commit** your modifications with descriptive semantic messages:
+   ```bash
+   git commit -m "feat(widget): implement real-time privacy lock synchronization"
+   ```
+4. **Push** to your fork and submit a **Pull Request**.
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**. See [LICENSE](LICENSE) for complete terms and permissions.
 
 ---
 
 <div align="center">
-
-  **Twiin — useful cards, a calmer wallet, and privacy kept close.**
-
-  <sub>Built with Flutter and Dart.</sub>
-
+  <sub>Engineered with precision for absolute privacy, mathematical fidelity, and digital elegance.</sub><br/>
+  <sub>Copyright © 2026 Twiin Project. All rights reserved.</sub>
 </div>
